@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica Ciclos JS</title>
+</head>
+<body>
+
+    <h2>Ejercicio 1: Sumatoria</h2>
+    <label>Número (n): <input type="number" id="numSum"></label>
+    <button onclick="sumatoria()">Calcular</button>
+    <div id="resSum"></div>
+
+    <h2>Ejercicio 2: Factorial</h2>
+    <label>Número (n): <input type="number" id="numFact"></label>
+    <button onclick="factorial()">Calcular</button>
+    <div id="resFact"></div>
+
+    <h2>Reto Adicional</h2>
+    <label>Número entero positivo (n): <input type="number" id="numReto"></label>
+    <button onclick="reto()">Calcular</button>
+    <div id="resReto"></div>
+
+    <script>
+        // --- Ejercicio 1 ---
+        function sumatoria() {
+            let n = parseInt(document.getElementById("numSum").value);
+            let suma = 0;
+            
+            // Ciclo for para calcular sumatoria de 1 a n
+            for (let i = 1; i <= n; i++) {
+                suma += i;
+            }
+            
+            document.getElementById("resSum").innerHTML = "Sumatoria: " + suma;
+        }
+
+        // --- Ejercicio 2 ---
+        function factorial() {
+            let n = parseInt(document.getElementById("numFact").value);
+            let fact = 1; 
+            
+            // Ciclo for para factorial (si n es 0, el ciclo no se ejecuta y devuelve 1)
+            for (let i = 1; i <= n; i++) {
+                fact *= i;
+            }
+            
+            document.getElementById("resFact").innerHTML = "Factorial: " + fact;
+        }
+
+        // --- Reto Adicional ---
+        function reto() {
+            let input = document.getElementById("numReto").value;
+            let n = Number(input);
+            let resDiv = document.getElementById("resReto");
+
+            // Validación: Numérico, entero, mayor a 0 y no vacío
+            if (input === "" || isNaN(n) || !Number.isInteger(n) || n <= 0) {
+                resDiv.innerHTML = "<span style='color:red;'>Error: Ingrese un número entero válido mayor a 0.</span>";
+                return;
+            }
+
+            let serie = "";
+            let suma = 0;
+            let i = 1;
+
+            // Ciclo while para generar la serie y la suma total
+            while (i <= n) {
+                serie += i + (i < n ? ", " : "");
+                suma += i;
+                i++;
+            }
+
+            // Validar si es par o impar
+            let paridad = (n % 2 === 0) ? "Par" : "Impar";
+
+            // Mostrar resultados ordenados
+            resDiv.innerHTML = `
+                <b>Números:</b> ${serie} <br>
+                <b>Suma total:</b> ${suma} <br>
+                <b>El número ${n} es:</b> ${paridad}
+            `;
+        }
+    </script>
+
+</body>
+</html>
