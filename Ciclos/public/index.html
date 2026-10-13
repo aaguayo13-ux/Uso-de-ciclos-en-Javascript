@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./src/producto.js"></script>
+    <script src="./src/inventario.js"></script>
+</head>
+<body>
+    <div id="App">
+        <form>
+
+            <label for="txtCod">
+                Código
+                <input type="text" id="txtCod">
+            </label>
+            <label for="txtNom">
+                Nombre
+                <input type="text" id="txtNom">
+            </label>
+            <label for="txtPrecio">
+                Precio
+                <input type="number" id="txtPrecio">
+            </label>
+            <label for="txtCant">
+                Cantidad
+                <input type="number" id="txtCant">
+            </label>
+
+        <button type="button" id="btnAdd">Agregar</button>
+        <button type="button" id="btnBuscar">Buscar</button>
+        <button type="button" id="btnEliminar">Eliminar</button>
+        <button type="button" id="btnListar">Listar</button>
+        <button type="button" id="btnListarInv">Listar Inverso</button>
+        <button type="reset">Cancelar</button>
+
+        </form>
+
+    <div id="detalles"></div>
+
+    </div>
+    
+    <script src="./src/app.js"></script>
+</body>
+</html>
